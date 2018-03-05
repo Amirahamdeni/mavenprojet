@@ -17,6 +17,6 @@ import org.junit.runner.RunWith;
     "json:target/cucumber2.json" },glue={"stepDefinition2"}
 		)
  
-public class testRunner2 {
+public class testRunner2Test {
  
 }
