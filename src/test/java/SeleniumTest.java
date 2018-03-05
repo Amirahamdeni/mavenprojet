@@ -73,7 +73,7 @@ public void T01_firstNameCSSSelector() {
  
     //Find first name text box by CSS Selector
     //
-    WebElement firstNameTextBox = driver.findElement(By.cssSelector("#reg-firstname"));
+    WebElement firstNameTextBox = driver.findElement(By.cssSelector("#reg-frstname"));
  
     //Assert that text box is empty
     assertThat(firstNameTextBox.getText(), is(""));}
