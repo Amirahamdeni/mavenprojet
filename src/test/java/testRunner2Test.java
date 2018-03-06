@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 
 @Cucumber.Options(format = { "pretty",
-    "json:target/cucumber2.json" },glue={"stepDefinition2"}
+    "json:target/cucumber2.json" },glue={"stepDefinitionTest"}
 		)
  
 public class testRunner2Test {

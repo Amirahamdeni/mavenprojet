@@ -17,7 +17,7 @@ import cucumber.annotation.en.When;
  *
  * @author asus
  */
-public class stepDefinition {
+public class stepDefinition1Test {
        @Given("^sample feature file is ready$")
        public void givenStatment(){
               System.out.println("Given statement executed successfully");
