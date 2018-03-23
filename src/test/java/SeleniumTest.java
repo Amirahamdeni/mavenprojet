@@ -2,10 +2,8 @@ import java.util.List;
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +15,7 @@ public class SeleniumTest {
 
     @BeforeClass
     public static void setupTest() {
-                  System.setProperty("webdriver.chrome.driver","D:\\chromedriver\\chromedriver.exe");
+                  System.setProperty("webdriver.chrome.driver","D:\\chromedriver.exe");
 
         driver = new ChromeDriver();
     }
