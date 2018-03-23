@@ -20,7 +20,7 @@ import cucumber.annotation.en.When;
 public class stepDefinition1Test {
        @Given("^sample feature file is ready$")
        public void givenStatment(){
-              System.out.println("Given statement executed successfully");
+              System.out.println("Given statement executed successfullyyeeees");
        }
        @When("^I run the feature file$")
        public void whenStatement(){
