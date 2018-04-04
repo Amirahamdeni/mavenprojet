@@ -5,6 +5,7 @@
  */
 
 
+import static com.stepDefinitionEmbaucheTest.Driver;
 import com.thoughtworks.selenium.Wait;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -15,8 +16,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -30,18 +34,19 @@ public class stepDefinition3Test {
 	public static void setUp() {
 		System.out.println("*******************");
 		System.out.println("launching IEEEEEEEEEEE browser");
-		System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
-                  driver = new InternetExplorerDriver();
-
+		 System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
+                	
+    driver = new InternetExplorerDriver();
 		
 	}
 
 	@Test
 	public void HraTEST() throws InterruptedException {
-          
+        
 		driver.manage().window().maximize();
 		driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
                 driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+              
 		String strPageTitle = driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
                 //CONNEXION
@@ -85,18 +90,10 @@ public class stepDefinition3Test {
                   
                     driver.switchTo().defaultContent();
                     System.out.println(driver.getTitle());
-                 Thread.sleep(30* 1000);
 
-                    
-                 System.out.println(driver.getTitle());
-                  ArrayList<String> allWindows = new ArrayList<> (driver.getWindowHandles());
-
-                driver.switchTo().window(allWindows.get(1));
-
-            System.out.println(driver.getTitle());
-                driver.switchTo().defaultContent();
-            System.out.println(driver.getTitle());
-
+WebElement frame=driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR002_AU13100F&VOC=FRP&PAGE=ACTION&IDENT=1FC89A37-FA2D-4F65-B33E-22C021A99320']"));
+driver.switchTo().frame(frame);
+           
                  WebElement DateRecrut =  driver.findElement(By.id("D*ZY3XDTEFAS_0"));
                  DateRecrut.sendKeys("01/01/2015");
                  WebElement Societe =  driver.findElement(By.id("D*ZY3XIDCY00_0"));
@@ -109,7 +106,7 @@ public class stepDefinition3Test {
                  Alimenter.click();
                 
 
-                driver.switchTo().window(allWindows.get(0));
+            //    driver.switchTo().window(all.get(0));
                 System.out.println(driver.getTitle());
                 
                 Thread.sleep(30 * 1000);
@@ -158,7 +155,8 @@ public class stepDefinition3Test {
               driver.switchTo().frame("MainFrame");
                  driver.switchTo().frame("body");
                  
-                 
+                                 Thread.sleep(1000);
+
                  WebElement CatE =  driver.findElement(By.id("D*ZYESCGSTHI-0-0_0"));
                  CatE.sendKeys("STANDA");
                   WebElement MotE =  driver.findElement(By.id("D*ZYESRSSTHI-0-0_0"));
