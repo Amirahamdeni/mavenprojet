@@ -22,7 +22,7 @@ public class stepDefinition1Test {
        public void givenStatment(){
               System.out.println("Given statement executed successfully");
        }
-       @When("^I run the feature file$")
+       @Then("^I run the feature file$")
        public void whenStatement(){
               System.out.println("When statement execueted successfully");
        }
