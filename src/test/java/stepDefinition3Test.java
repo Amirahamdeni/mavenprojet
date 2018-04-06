@@ -37,7 +37,7 @@ public class stepDefinition3Test {
         
 		driver.manage().window().maximize();
 		driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
-                driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
               
 		String strPageTitle = driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
@@ -84,11 +84,11 @@ public class stepDefinition3Test {
                     System.out.println(driver.getTitle());
                     Thread.sleep(1000);
 
-WebElement frame=driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR002_AU13100F&VOC=FRP&PAGE=ACTION&IDENT=1FC89A37-FA2D-4F65-B33E-22C021A99320']"));
-driver.switchTo().frame(frame);
+                    WebElement frame=driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR002_AU13100F&VOC=FRP&PAGE=ACTION&IDENT=1FC89A37-FA2D-4F65-B33E-22C021A99320']"));
+                        driver.switchTo().frame(frame);
            
                  WebElement DateRecrut =  driver.findElement(By.id("D*ZY3XDTEFAS_0"));
-                 DateRecrut.sendKeys("01/01/2015");
+                 DateRecrut.sendKeys("01/01/2018");
                  WebElement Societe =  driver.findElement(By.id("D*ZY3XIDCY00_0"));
                  Societe.sendKeys("CGM");
                 
@@ -124,7 +124,7 @@ driver.switchTo().frame(frame);
                  Sexe.sendKeys("MASCULIN");
                       WebElement DateN =  driver.findElement(By.id("D*ZY10DATNAI-0-0_0"));
                  DateN.sendKeys("01/01/1990");
-                 Thread.sleep(30 * 1000);
+                 Thread.sleep(1000);
                  
                  //CHANGE TAB AFFECTATION
                    driver.switchTo().defaultContent();
@@ -138,7 +138,7 @@ driver.switchTo().frame(frame);
                     System.out.println(driver.getTitle());
                      WebElement tab2 =  driver.findElement(By.id("Tab2off"));
                     tab2.click();
-                Thread.sleep(30*1000);
+                Thread.sleep(1000);
                 driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -157,14 +157,14 @@ driver.switchTo().frame(frame);
                   WebElement Emploi =  driver.findElement(By.id("D*ZY3BIDJB00-0-0_0"));
                  Emploi.sendKeys("16STAGI");
                      WebElement UnitO =  driver.findElement(By.id("D*ZY3BIDOU00-0-0_0"));
-                 UnitO.sendKeys("CGM");
+                 UnitO.sendKeys("FRCGMARO");
                   WebElement CalP =  driver.findElement(By.id("D*ZY5UIDGPCA-0-0_0"));
                  CalP.sendKeys("01S");
                    WebElement Code =  driver.findElement(By.id("D*ZY5GCODE-0-0_0"));
                  Code.sendKeys("C10A");
                  //FIN AFFECTATION
                  //CARRIERE
-                  Thread.sleep(30 * 1000);
+                  Thread.sleep(1000);
 
                    driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
@@ -177,7 +177,7 @@ driver.switchTo().frame(frame);
                       System.out.println(driver.getTitle());
                      WebElement tab3 =  driver.findElement(By.id("Tab3off"));
                     tab3.click();
-                    Thread.sleep(30*1000);
+                    Thread.sleep(1000);
                 driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -236,7 +236,7 @@ driver.switchTo().frame(frame);
                 FreqP.sendKeys("MT");
                 //FIN DONN2ES
                 //NAVIGATION POUR SOUMETTRE
-                Thread.sleep(30 * 1000);
+                Thread.sleep(1000);
                     driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -246,8 +246,13 @@ driver.switchTo().frame(frame);
                     driver.switchTo().frame("BannerFrame");
                    WebElement Commit =  driver.findElement(By.id("A*COMMIT_2"));
                 Commit.click();
-                
-                
+                                   driver.switchTo().defaultContent();
+
+                    WebElement frame2 =driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/errorsDlg.html']"));
+                        driver.switchTo().frame(frame2);
+               
+                 WebElement Yesbutton =driver.findElement(By.id("yes_button"));
+                        Yesbutton.click();
 
 }
 
