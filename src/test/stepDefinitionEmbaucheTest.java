@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package com;
 
 /**
  *
@@ -16,7 +16,6 @@ import cucumber.api.java.en.Then;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,7 +32,7 @@ public class stepDefinitionEmbaucheTest {
 		System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                   Driver = new InternetExplorerDriver();	
 	}
-    @Test
+    
     @Given("^User Is On HomePage$")
     public void user_is_on_homepage() throws Throwable {
         
@@ -43,24 +42,20 @@ public class stepDefinitionEmbaucheTest {
 		String strPageTitle = Driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
     }
-     @Then("^User wait$")
-    public void user_wait() throws Throwable {
-       Thread.sleep(1000);
-    }
     
-   @Test
-     @Then("^User Enters '(.*)' and '(.*)'$")
+    
+     @Then("^User Enters '(.+)' and '(.+)'$")
     public void user_enters_and_(String username, String password) throws Throwable {
          WebElement firstNameTextBox = Driver.findElement(By.id("loginid"));
-                    firstNameTextBox.sendKeys(username);
+                    firstNameTextBox.sendKeys("username");
                    
                     WebElement PasswordTextBox = Driver.findElement(By.id("password"));
-                    PasswordTextBox.sendKeys(password);
+                    PasswordTextBox.sendKeys("password");
                     
                      WebElement Connex = Driver.findElement(By.className("hrportal-self-submit-center"));
                      Connex.click();
     }
-    @Test
+
     @Then("^User Click On Menu$")
     public void user_click_on_menu_() throws Throwable {
          WebElement Menu=  Driver.findElement(By.className("hrsp_root_label"));
@@ -108,23 +103,17 @@ public class stepDefinitionEmbaucheTest {
 
     @Then("^User Switch PopUpWindow$")
     public void user_switch_popupwindow() throws Throwable {
-        Driver.switchTo().defaultContent();
+         Driver.switchTo().defaultContent();
                     System.out.println(Driver.getTitle());
+                 Thread.sleep(30* 1000);  
+                 System.out.println(Driver.getTitle());
+                  ArrayList<String> allWindows = new ArrayList<> (Driver.getWindowHandles());
 
-WebElement frame=Driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR002_AU13100F&VOC=FRP&PAGE=ACTION&IDENT=1FC89A37-FA2D-4F65-B33E-22C021A99320']"));
-Driver.switchTo().frame(frame);
-           
-                 WebElement DateRecrut =  Driver.findElement(By.id("D*ZY3XDTEFAS_0"));
-                 DateRecrut.sendKeys("01/01/2015");
-                 WebElement Societe =  Driver.findElement(By.id("D*ZY3XIDCY00_0"));
-                 Societe.sendKeys("CGM");
-                
-                 WebElement Etabliss =  Driver.findElement(By.id("D*ZY3XIDESTA_0"));
-                 Etabliss.sendKeys("CGM01");
-                 
-                  WebElement Alimenter =  Driver.findElement(By.className("POPUPFOOTER_BUTTON"));
-                 Alimenter.click();
-                
+                Driver.switchTo().window(allWindows.get(1));
+
+            System.out.println(Driver.getTitle());
+                Driver.switchTo().defaultContent();
+            System.out.println(Driver.getTitle());
     }
 
     @Then("^User Type DateRecrutement '(.+)'$")

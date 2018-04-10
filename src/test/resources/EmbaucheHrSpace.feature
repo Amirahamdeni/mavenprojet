@@ -4,6 +4,7 @@ Feature: Embaucher un salarié
 Scenario Outline: Successful Embauche 
 
         Given User Is On HomePage
+        Then User wait
 	Then User Enters '<username>' and '<password>' 
         Then User Click On Menu 
         Then User Click On Dossier 
@@ -51,4 +52,4 @@ Scenario Outline: Successful Embauche
 
    Examples: 
  | username | password | dateRecrutement| societe|etablissement|qualite|nom   |prenom  |sexe     |dateNaissance|categoriEntree|motifEntree|emploi |uniteOrganisationnelle|calPaie|codeCycleTravail|conventionCollective|qualification|typePaie|codeGrade|natureContrat|typeContrat|typeTempsContractuel|heurTrvailSemaine|pourcentageTempsPlein|rubrique|montantSalarial|freqPaie|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
- |  TYOUSFI |  HRA     |01/01/2015      |CGM     |CGM01        |M.     |BRUNO |Patrick |MASCULIN |01/01/1990   |STANDA        |REX        |16STAGI|CGM                   |01     |C10A            |9999                |STA          |3       |9999-STA |SC           |ST         |00                  |35               |100                  |ISM     |1500           |MT      |
+ |  TYOUSFI |  HRA     |01/01/2018      |CGM     |CGM01        |M.     |BRUNO |Patrick |MASCULIN |01/01/1990   |STANDA        |REX        |16STAGI|CGM                   |01     |C10A            |9999                |STA          |3       |9999-STA |SC           |ST         |00                  |35               |100                  |ISM     |1500           |MT      |
