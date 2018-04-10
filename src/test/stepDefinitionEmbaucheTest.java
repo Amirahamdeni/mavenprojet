@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,8 +35,8 @@ public class stepDefinitionEmbaucheTest {
 		System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                   Driver = new InternetExplorerDriver();	
 	}
-    @Test
-    @Given("^_user_is_on_homePage$")
+    
+    @Given("^ User Is On HomePage$")
     public void user_is_on_homepage() throws Throwable {
         
                 Driver.manage().window().maximize();
@@ -48,8 +47,8 @@ public class stepDefinitionEmbaucheTest {
     }
     
     
-   @Test
-     @Then("^_user_enters_'(.+)'_and_'(.+)'_$")
+  
+     @Then("^ User Enters '(.+)' and '(.+)'$")
     public void user_enters_and_() throws Throwable {
          Driver.manage().timeouts().pageLoadTimeout(100, SECONDS);
          WebElement firstNameTextBox = Driver.findElement(By.id("loginid"));
@@ -61,7 +60,7 @@ public class stepDefinitionEmbaucheTest {
                      WebElement Connex = Driver.findElement(By.className("hrportal-self-submit-center"));
                      Connex.click();
     }
-    @Test
+    
     @Then("^User Click On Menu$")
     public void user_click_on_menu_() throws Throwable {
          Driver.manage().timeouts().pageLoadTimeout(100, SECONDS);

@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TNR;
-import com.thoughtworks.selenium.Wait;
+
 import java.util.concurrent.TimeUnit;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -12,7 +11,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  *
@@ -213,8 +211,8 @@ public class stepDefinitionCalculPaieTest {
                     driver.switchTo().frame("OpFrmsFrame");                                        
                  
                     driver.switchTo().frame("AppFrmsFrame");
-                       WebElement ExeDemandeP= driver.findElement(By.id("Z*SubBtn"));
-                      ExeDemandeP.click();
+                  //     WebElement ExeDemandeP= driver.findElement(By.id("Z*SubBtn"));
+                    //  ExeDemandeP.click();
                     
 
                  
