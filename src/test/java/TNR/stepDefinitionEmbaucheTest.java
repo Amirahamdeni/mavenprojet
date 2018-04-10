@@ -1,3 +1,5 @@
+package TNR;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +17,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import static java.util.concurrent.TimeUnit.SECONDS;
 import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,32 +36,35 @@ public class stepDefinitionEmbaucheTest {
 		System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                   Driver = new InternetExplorerDriver();	
 	}
-    
-    @Given("^User Is On HomePage$")
+    @Test
+    @Given("^_user_is_on_homePage$")
     public void user_is_on_homepage() throws Throwable {
         
                 Driver.manage().window().maximize();
 		Driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
-                Driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+                Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String strPageTitle = Driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
     }
     
     
-     @Then("^User Enters '(.+)' and '(.+)'$")
-    public void user_enters_and_(String username, String password) throws Throwable {
+   @Test
+     @Then("^_user_enters_'(.+)'_and_'(.+)'_$")
+    public void user_enters_and_() throws Throwable {
+         Driver.manage().timeouts().pageLoadTimeout(100, SECONDS);
          WebElement firstNameTextBox = Driver.findElement(By.id("loginid"));
-                    firstNameTextBox.sendKeys("username");
+                    firstNameTextBox.sendKeys("TYOUSFI");
                    
                     WebElement PasswordTextBox = Driver.findElement(By.id("password"));
-                    PasswordTextBox.sendKeys("password");
+                    PasswordTextBox.sendKeys("HRA");
                     
                      WebElement Connex = Driver.findElement(By.className("hrportal-self-submit-center"));
                      Connex.click();
     }
-
+    @Test
     @Then("^User Click On Menu$")
     public void user_click_on_menu_() throws Throwable {
+         Driver.manage().timeouts().pageLoadTimeout(100, SECONDS);
          WebElement Menu=  Driver.findElement(By.className("hrsp_root_label"));
                     Menu.click();  
                     Thread.sleep(4000);
