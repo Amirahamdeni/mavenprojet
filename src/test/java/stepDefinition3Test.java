@@ -41,14 +41,13 @@ public class stepDefinition3Test {
         
 		driver.manage().window().maximize();
 		driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
-                driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
-              WebDriverWait wait = new WebDriverWait(driver, 50);
+                driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+            //  WebDriverWait wait = new WebDriverWait(driver, 50);
 
 		String strPageTitle = driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
                 //CONNEXION
                     WebElement firstNameTextBox = driver.findElement(By.id("loginid"));
-                     wait.until(ExpectedConditions.visibilityOf(firstNameTextBox));
                     firstNameTextBox.sendKeys("TYOUSFI");
                    
                     WebElement PasswordTextBox = driver.findElement(By.id("password"));
