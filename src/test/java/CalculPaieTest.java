@@ -208,8 +208,9 @@ public class CalculPaieTest {
                       SoumCycle3.click();
                        WebElement CalculPaie3= driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[3]/ul/li[1]/div/div[1]"));
                       CalculPaie3.click();
+                      
                        driver.switchTo().defaultContent();
-                        driver.switchTo().defaultContent();
+                       
                     driver.switchTo().frame("technologyFrame");
                     
                     driver.switchTo().frame("OpFrmsFrame");                                        
@@ -218,7 +219,7 @@ public class CalculPaieTest {
                       driver.switchTo().frame("BannerFrame");
 //                      driver.switchTo().defaultContent();
                        
-
+                    
                       WebElement ExeDemandeP= driver.findElement(By.xpath("//*[@id=\"Z*SubBtn\"]"));
                      ExeDemandeP.click();
                      driver.switchTo().alert().accept();
