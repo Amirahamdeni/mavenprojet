@@ -163,6 +163,8 @@ public class CalculPaieTest {
                       VoirRes.click();
                      WebElement Bulletin= driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[1]/ul/li[1]/div/div[1]"));
                    Bulletin.click();
+                             Thread.sleep(1000);
+
                     driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -206,18 +208,21 @@ public class CalculPaieTest {
                      
                       WebElement SoumCycle3 = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[3]/div/div"));
                       SoumCycle3.click();
-                       WebElement CalculPaie3= driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[3]/ul/li[1]/div/div[1]"));
-                      CalculPaie3.click();
-                      
-                       driver.switchTo().defaultContent();
-                       
+                       WebElement CalculP= driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[3]/ul/li[1]/div/div[1]"));
+                      CalculP.click();
+                       Thread.sleep(1000);
+                   driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
                     driver.switchTo().frame("OpFrmsFrame");                                        
                  
                     driver.switchTo().frame("AppFrmsFrame");
-                      driver.switchTo().frame("BannerFrame");
-//                      driver.switchTo().defaultContent();
+                    driver.switchTo().frame("BannerFrame");
+                      Thread.sleep(1000);
+                 WebElement DemandeF= driver.findElement(By.id("PROMPT-1-1"));
+                      DemandeF.sendKeys("%AMIRA%");
+                      WebElement RechercheF= driver.findElement(By.xpath("//*[@id=\"HRDSEL_1\"]/table/tbody/tr/td/table/tbody/tr[4]/td[6]/input"));
+                      RechercheF.click();  
                        
                     
                       WebElement ExeDemandeP= driver.findElement(By.xpath("//*[@id=\"Z*SubBtn\"]"));
@@ -225,10 +230,13 @@ public class CalculPaieTest {
                      driver.switchTo().alert().accept();
                       WebElement Resultat= driver.findElement(By.xpath("//*[@id=\"Z*Results\"]"));
                      Resultat.click();
+                         Thread.sleep(30*1000);
+                                             driver.switchTo().defaultContent();
+
                     WebElement frame=driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR0CT_AB4K3W0X&VOC=FRP&PAGE=ACTION&IDENT=23A82D56-AA6F-465A-9779-FC39D6B47BC3']"));
                         driver.switchTo().frame(frame);
                            Thread.sleep(2000);
-                            WebElement Refresh= driver.findElement(By.xpath("A*DOSS_0"));
+                            WebElement Refresh= driver.findElement(By.xpath("//*[@id=\"POPUP_BANNER\"]/table/tbody/tr[4]/td/table/tbody/tr/td/table/tbody/tr[1]/td[2]"));
                      Refresh.click();
 
                     
