@@ -10,11 +10,9 @@ import java.util.concurrent.TimeUnit;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
 
 /**
  *
@@ -22,7 +20,7 @@ import org.openqa.selenium.interactions.Actions;
  */
 public class CalculPaieTest {
     
-    	public static WebDriver driver;
+    	private static WebDriver driver;
 	
 	@BeforeClass
 	public static void setUp() {
@@ -31,6 +29,8 @@ public class CalculPaieTest {
 		 System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                 	
     driver = new InternetExplorerDriver();
+                    driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
 		
 	}
         @Test
@@ -155,7 +155,7 @@ public class CalculPaieTest {
                   WebElement Menu2=  driver.findElement(By.className("hrsp_root_label"));
                     Menu2.click();
                     
-                     // Thread.sleep(1000);
+                    
                       WebElement Paie2 = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/div/div"));
                       Paie2.click();
                      
@@ -163,7 +163,7 @@ public class CalculPaieTest {
                       VoirRes.click();
                      WebElement Bulletin= driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[1]/ul/li[1]/div/div[1]"));
                    Bulletin.click();
-                             Thread.sleep(1000);
+                           
 
                     driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
@@ -201,8 +201,8 @@ public class CalculPaieTest {
 
                           WebElement Menu3=  driver.findElement(By.className("hrsp_root_label"));
                     Menu3.click();
-                    
-                     // Thread.sleep(1000);
+                   
+                      Thread.sleep(1000);
                       WebElement Paie3 = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/div/div"));
                       Paie3.click();
                      
@@ -210,15 +210,17 @@ public class CalculPaieTest {
                       SoumCycle3.click();
                        WebElement CalculP= driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[3]/ul/li[1]/div/div[1]"));
                       CalculP.click();
-                       Thread.sleep(1000);
-                   driver.switchTo().defaultContent();
-                    driver.switchTo().frame("technologyFrame");
+                  
+
+                  driver.switchTo().defaultContent();
+                 driver.navigate().refresh();
+                       driver.switchTo().frame("technologyFrame");
                     
                     driver.switchTo().frame("OpFrmsFrame");                                        
                  
                     driver.switchTo().frame("AppFrmsFrame");
                     driver.switchTo().frame("BannerFrame");
-                      Thread.sleep(1000);
+                    
                  WebElement DemandeF= driver.findElement(By.id("PROMPT-1-1"));
                       DemandeF.sendKeys("%AMIRA%");
                       WebElement RechercheF= driver.findElement(By.xpath("//*[@id=\"HRDSEL_1\"]/table/tbody/tr/td/table/tbody/tr[4]/td[6]/input"));

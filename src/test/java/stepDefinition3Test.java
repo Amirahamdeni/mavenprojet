@@ -252,7 +252,7 @@ public class stepDefinition3Test {
                    WebElement Commit =  driver.findElement(By.id("A*COMMIT_2"));
                 Commit.click();
                                
-                    Thread.sleep(30*1000);
+                    Thread.sleep(1000);
                      driver.switchTo().defaultContent();
                     WebElement frame2 =driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/errorsDlg.html']"));
                         driver.switchTo().frame(frame2);
