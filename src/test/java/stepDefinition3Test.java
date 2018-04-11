@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,6 +15,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -33,16 +37,18 @@ public class stepDefinition3Test {
 	}
 
 	@Test
-	public void HraTEST() throws InterruptedException {
+	public void EmbaucheTest()  {
         
 		driver.manage().window().maximize();
 		driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
-                driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-              
+                driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+              WebDriverWait wait = new WebDriverWait(driver, 50);
+
 		String strPageTitle = driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
                 //CONNEXION
                     WebElement firstNameTextBox = driver.findElement(By.id("loginid"));
+                     wait.until(ExpectedConditions.visibilityOf(firstNameTextBox));
                     firstNameTextBox.sendKeys("TYOUSFI");
                    
                     WebElement PasswordTextBox = driver.findElement(By.id("password"));
@@ -55,7 +61,7 @@ public class stepDefinition3Test {
                     WebElement Menu=  driver.findElement(By.className("hrsp_root_label"));
                     Menu.click();
                     
-                      Thread.sleep(4000);
+//                      Thread.sleep(1000);
                       WebElement Dossier = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[1]/div/div"));
                       Dossier.click();
                     
@@ -67,7 +73,7 @@ public class stepDefinition3Test {
                     Embauche.click();
                 //FIN NAVIGATION    
                 //RENSEIGNEMENT INDIV
-                    Thread.sleep(30 * 1000);
+//                    Thread.sleep(4000);
                     driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -82,7 +88,7 @@ public class stepDefinition3Test {
                   
                     driver.switchTo().defaultContent();
                     System.out.println(driver.getTitle());
-                    Thread.sleep(1000);
+//                    Thread.sleep(1000);
 
                     WebElement frame=driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR002_AU13100F&VOC=FRP&PAGE=ACTION&IDENT=1FC89A37-FA2D-4F65-B33E-22C021A99320']"));
                         driver.switchTo().frame(frame);
@@ -102,7 +108,7 @@ public class stepDefinition3Test {
             //    driver.switchTo().window(all.get(0));
                 System.out.println(driver.getTitle());
                 
-                Thread.sleep(1000);
+//                Thread.sleep(1000);
                     driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -113,7 +119,7 @@ public class stepDefinition3Test {
                     driver.switchTo().frame("MainFrame");
                     driver.switchTo().frame("body");
                     System.out.println(driver.getTitle());
-                Thread.sleep(30 * 1000);
+            //    Thread.sleep(4000);
                 WebElement Qualite =  driver.findElement(By.id("D*ZY07QUALIT-0-0_0"));
                  Qualite.sendKeys("M.");
                 WebElement Nom =  driver.findElement(By.id("D*ZY07NOMUSE-0-0_0"));
@@ -124,7 +130,7 @@ public class stepDefinition3Test {
                  Sexe.sendKeys("MASCULIN");
                       WebElement DateN =  driver.findElement(By.id("D*ZY10DATNAI-0-0_0"));
                  DateN.sendKeys("01/01/1990");
-                 Thread.sleep(1000);
+//                 Thread.sleep(1000);
                  
                  //CHANGE TAB AFFECTATION
                    driver.switchTo().defaultContent();
@@ -138,7 +144,7 @@ public class stepDefinition3Test {
                     System.out.println(driver.getTitle());
                      WebElement tab2 =  driver.findElement(By.id("Tab2off"));
                     tab2.click();
-                Thread.sleep(1000);
+//                Thread.sleep(1000);
                 driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -148,7 +154,7 @@ public class stepDefinition3Test {
               driver.switchTo().frame("MainFrame");
                  driver.switchTo().frame("body");
                  
-                                 Thread.sleep(1000);
+                          //       Thread.sleep(1000);
 
                  WebElement CatE =  driver.findElement(By.id("D*ZYESCGSTHI-0-0_0"));
                  CatE.sendKeys("STANDA");
@@ -164,7 +170,7 @@ public class stepDefinition3Test {
                  Code.sendKeys("C10A");
                  //FIN AFFECTATION
                  //CARRIERE
-                  Thread.sleep(1000);
+//                  Thread.sleep(1000);
 
                    driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
@@ -177,7 +183,7 @@ public class stepDefinition3Test {
                       System.out.println(driver.getTitle());
                      WebElement tab3 =  driver.findElement(By.id("Tab3off"));
                     tab3.click();
-                    Thread.sleep(1000);
+                  //  Thread.sleep(1000);
                 driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -219,7 +225,7 @@ public class stepDefinition3Test {
                       System.out.println(driver.getTitle());
                      WebElement tab6 =  driver.findElement(By.id("Tab6off"));
                     tab6.click();
-                     Thread.sleep(30*1000);
+//                     Thread.sleep(30*1000);
                 driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
 
@@ -236,7 +242,7 @@ public class stepDefinition3Test {
                 FreqP.sendKeys("MT");
                 //FIN DONN2ES
                 //NAVIGATION POUR SOUMETTRE
-                Thread.sleep(1000);
+          //      Thread.sleep(1000);
                     driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
@@ -246,7 +252,7 @@ public class stepDefinition3Test {
                     driver.switchTo().frame("BannerFrame");
                    WebElement Commit =  driver.findElement(By.id("A*COMMIT_2"));
                 Commit.click();
-                                   driver.switchTo().defaultContent();
+                               
 
                     WebElement frame2 =driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/errorsDlg.html']"));
                         driver.switchTo().frame(frame2);

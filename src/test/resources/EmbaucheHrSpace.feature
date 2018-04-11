@@ -1,10 +1,10 @@
-@Embauche 
+@EmbaucheHrSpace
 Feature: Embaucher un salarié
 
+Scenario: Successful Embauche 
 Scenario Outline: Successful Embauche 
 
         Given User Is On HomePage
-        Then User wait
 	Then User Enters '<username>' and '<password>' 
         Then User Click On Menu 
         Then User Click On Dossier 

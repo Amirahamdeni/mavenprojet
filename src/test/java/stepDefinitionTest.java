@@ -15,19 +15,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 public class stepDefinitionTest {
 		public static WebDriver driver;
-
+                @Test
                 @Given("^User is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
-                      System.setProperty("webdriver.chrome.driver","D:\\chromedriver\\chromedriver.exe");
-
-		driver = new ChromeDriver();
+                    System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
+                  driver = new InternetExplorerDriver();
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	    driver.get("http://www.store.demoqa.com");
+	    driver.navigate().to("http://www.store.demoqa.com");
 	}
-
+           @Test
 	@When("^User Navigate to LogIn Page$")
 	public void user_Navigate_to_LogIn_Page() throws Throwable {
 		driver.findElement(By.xpath(".//*[@id='account']/a")).click();

@@ -1,5 +1,7 @@
 
 
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,7 +22,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 
-@Cucumber.Options(format = { "pretty","json:target/cucumberHRA.json" },tags= "@Embauche")
-public class cucumberHRARunnerTest {
+@Cucumber.Options(format = { "pretty","json:target/cucumberHRA.json" },tags= "@EmbaucheHrSpace")
+public class embaucheRunnerTest {
     
 }
