@@ -37,7 +37,7 @@ public class stepDefinition3Test {
 	}
 
 	@Test
-	public void EmbaucheTest()  {
+	public void EmbaucheTest() throws InterruptedException  {
         
 		driver.manage().window().maximize();
 		driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
@@ -88,7 +88,7 @@ public class stepDefinition3Test {
                   
                     driver.switchTo().defaultContent();
                     System.out.println(driver.getTitle());
-//                    Thread.sleep(1000);
+                    Thread.sleep(1000);
 
                     WebElement frame=driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR002_AU13100F&VOC=FRP&PAGE=ACTION&IDENT=1FC89A37-FA2D-4F65-B33E-22C021A99320']"));
                         driver.switchTo().frame(frame);
@@ -253,7 +253,7 @@ public class stepDefinition3Test {
                    WebElement Commit =  driver.findElement(By.id("A*COMMIT_2"));
                 Commit.click();
                                
-
+    Thread.sleep(1000);
                     WebElement frame2 =driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/errorsDlg.html']"));
                         driver.switchTo().frame(frame2);
                
