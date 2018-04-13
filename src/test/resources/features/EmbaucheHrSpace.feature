@@ -5,12 +5,12 @@ Scenario: Successful Embauche
 Scenario Outline: Successful Embauche 
 
         Given User Is On HomePage
-	Then User Enters '<username>' and '<password>' 
+	Then User Enters '<username>'and '<password>' 
         Then User Click On Menu 
         Then User Click On Dossier 
         Then User Click On Entree 
         Then User Click On Embaucher
-        Then User Switch To BannerFrame 
+        Then User Switch To BannerFrameone
         Then User Click On Creer
         Then User Switch PopUpWindow
         Then User Type DateRecrutement '<dateRecrutement>'                                        
@@ -47,7 +47,7 @@ Scenario Outline: Successful Embauche
         Then User Type Rubrique '<rubrique>'                                           
         Then User Type MontantSalarial '<montantSalarial>'                                           
         Then User Type FreqPaie '<freqPaie>'                                             
-        Then User Switch To BannerFrame
+        Then User Switch To BannerFrametwo
         Then User Click On Soumettre
 
    Examples: 

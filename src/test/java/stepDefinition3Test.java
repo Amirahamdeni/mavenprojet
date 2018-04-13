@@ -15,8 +15,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -42,6 +40,8 @@ public class stepDefinition3Test {
 		driver.manage().window().maximize();
 		driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
                 driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+                 driver.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
+
             //  WebDriverWait wait = new WebDriverWait(driver, 50);
 
 		String strPageTitle = driver.getTitle();
@@ -59,9 +59,8 @@ public class stepDefinition3Test {
                 //NAVIGATION
                     WebElement Menu=  driver.findElement(By.className("hrsp_root_label"));
                     Menu.click();
-                    
-//                      Thread.sleep(1000);
-                      WebElement Dossier = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[1]/div/div"));
+                                 Thread.sleep(1000);
+                    WebElement Dossier = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[1]/div/div"));
                       Dossier.click();
                     
 
@@ -94,6 +93,7 @@ public class stepDefinition3Test {
            
                  WebElement DateRecrut =  driver.findElement(By.id("D*ZY3XDTEFAS_0"));
                  DateRecrut.sendKeys("01/01/2018");
+                 
                  WebElement Societe =  driver.findElement(By.id("D*ZY3XIDCY00_0"));
                  Societe.sendKeys("CGM");
                 
@@ -257,8 +257,8 @@ public class stepDefinition3Test {
                     WebElement frame2 =driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/errorsDlg.html']"));
                         driver.switchTo().frame(frame2);
                
-                 WebElement Yesbutton =driver.findElement(By.id("yes_button"));
-                        Yesbutton.click();
+               //  WebElement Yesbutton =driver.findElement(By.id("yes_button"));
+                  //      Yesbutton.click();
 
 }
 

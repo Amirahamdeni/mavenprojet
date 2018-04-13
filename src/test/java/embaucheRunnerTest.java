@@ -9,20 +9,19 @@
  */
 
 
-import cucumber.junit.Cucumber;
+
+import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
-
-
-/**
- *
- * @author ahamdeni
- */
-
-
-
+import cucumber.api.CucumberOptions;
 @RunWith(Cucumber.class)
+@CucumberOptions(
+        features = "src/test/resources/"
+        ,glue = {"stepDefinitionEmbauche"}
+        ,plugin = {"pretty", "json:target/cucumber.json"}     
+        ,tags = {"@EmbaucheHrSpace"}
+              
+) 
 
-@Cucumber.Options(format = { "pretty","json:target/cucumberHRA.json" },tags= "@EmbaucheHrSpace")
 public class embaucheRunnerTest {
     
 }

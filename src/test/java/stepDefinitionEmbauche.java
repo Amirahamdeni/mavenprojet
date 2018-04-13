@@ -1,5 +1,7 @@
 
 
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,30 +16,32 @@
 
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+
 import cucumber.api.java.en.Then;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-public class stepDefinitionEmbaucheTest {
+public class stepDefinitionEmbauche {
     	
     public static WebDriver Driver;
     
-    	@BeforeClass
-	public static void setUp() {
-		System.out.println("*******************");
+    	
+  
+    @Given("^User Is On HomePage$")
+    public void user_Is_On_HomePage() throws Throwable {
+        System.out.println("*******************");
 		System.out.println("launching IEEEEEEEEEEE browser");
-		System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
-                  Driver = new InternetExplorerDriver();	
-	}
-    
-    @Given("^ User Is On HomePage$")
-    public void user_is_on_homepage() throws Throwable {
+		
+                  Driver = new InternetExplorerDriver();
+        System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
         
                 Driver.manage().window().maximize();
 		Driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
@@ -47,8 +51,8 @@ public class stepDefinitionEmbaucheTest {
     }
     
     
-  
-     @Then("^ User Enters '(.+)' and '(.+)'$")
+
+     @Then("^User Enters '(.+)' and '(.+)'$")
     public void user_enters_and_() throws Throwable {
          Driver.manage().timeouts().pageLoadTimeout(100, SECONDS);
          WebElement firstNameTextBox = Driver.findElement(By.id("loginid"));
@@ -59,7 +63,14 @@ public class stepDefinitionEmbaucheTest {
                     
                      WebElement Connex = Driver.findElement(By.className("hrportal-self-submit-center"));
                      Connex.click();
+
+      
+         
     }
+
+
+
+    
     
     @Then("^User Click On Menu$")
     public void user_click_on_menu_() throws Throwable {
@@ -89,8 +100,8 @@ public class stepDefinitionEmbaucheTest {
       
     }
 
-    @Then("^User Switch To BannerFrame $")
-    public void user_switch_to_bannerframe() throws Throwable {
+    @Then("^User Switch To BannerFrame$")
+    public void user_Switch_To_BannerFrame_1() throws Throwable {
       Thread.sleep(30 * 1000);
                     Driver.switchTo().defaultContent();
                     Driver.switchTo().frame("technologyFrame");
@@ -115,16 +126,7 @@ public class stepDefinitionEmbaucheTest {
 WebElement frame=Driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR002_AU13100F&VOC=FRP&PAGE=ACTION&IDENT=1FC89A37-FA2D-4F65-B33E-22C021A99320']"));
 Driver.switchTo().frame(frame);
            
-                 WebElement DateRecrut =  Driver.findElement(By.id("D*ZY3XDTEFAS_0"));
-                 DateRecrut.sendKeys("01/01/2015");
-                 WebElement Societe =  Driver.findElement(By.id("D*ZY3XIDCY00_0"));
-                 Societe.sendKeys("CGM");
-                
-                 WebElement Etabliss =  Driver.findElement(By.id("D*ZY3XIDESTA_0"));
-                 Etabliss.sendKeys("CGM01");
-                 
-                  WebElement Alimenter =  Driver.findElement(By.className("POPUPFOOTER_BUTTON"));
-                 Alimenter.click();
+               
                 
     }
 
