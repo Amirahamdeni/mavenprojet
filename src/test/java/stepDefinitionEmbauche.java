@@ -99,7 +99,7 @@ public class stepDefinitionEmbauche {
 
     @Then("^User Switch To BannerFrameone$")
     public void user_Switch_To_BannerFrameone() throws Throwable {
-      Thread.sleep(1000);
+      Thread.sleep(2000);
                     Driver.switchTo().defaultContent();
                     Driver.switchTo().frame("technologyFrame");
                     
