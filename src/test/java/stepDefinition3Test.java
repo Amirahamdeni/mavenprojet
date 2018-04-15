@@ -42,7 +42,7 @@ public class stepDefinition3Test {
                 driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
                  driver.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
 
-            //  WebDriverWait wait = new WebDriverWait(driver, 50);
+           
 
 		String strPageTitle = driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
@@ -153,7 +153,7 @@ public class stepDefinition3Test {
               driver.switchTo().frame("MainFrame");
                  driver.switchTo().frame("body");
                  
-                          //       Thread.sleep(1000);
+                                 Thread.sleep(1000);
 
                  WebElement CatE =  driver.findElement(By.id("D*ZYESCGSTHI-0-0_0"));
                  CatE.sendKeys("STANDA");

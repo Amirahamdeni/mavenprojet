@@ -21,10 +21,7 @@ import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-import static java.util.concurrent.TimeUnit.SECONDS;
-import org.junit.BeforeClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -37,15 +34,15 @@ public class stepDefinitionEmbauche {
   
     @Given("^User Is On HomePage$")
     public void user_Is_On_HomePage() throws Throwable {
-        System.out.println("*******************");
-		System.out.println("launching IEEEEEEEEEEE browser");
+       
 		     System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                   Driver = new InternetExplorerDriver();
    
         
                 Driver.manage().window().maximize();
 		Driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
-                Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+              Driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+                 Driver.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
 		String strPageTitle = Driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
     }
@@ -77,7 +74,7 @@ public class stepDefinitionEmbauche {
       
          WebElement Menu=  Driver.findElement(By.className("hrsp_root_label"));
                     Menu.click();  
-                    Thread.sleep(4000);
+                    Thread.sleep(1000);
     }
 
     @Then("^User Click On Dossier$")
@@ -114,14 +111,18 @@ public class stepDefinitionEmbauche {
 
     @Then("^User Click On Creer$")
     public void user_click_on_creer_() throws Throwable {
+                                        
+
        WebElement BoutonCreer1 =  Driver.findElement(By.xpath("//*[@id=\"HRDIV1\"]/table/tbody/tr[1]/td[1]/table/tbody/tr/td/table/tbody/tr[4]/td[2]/input"));
                     BoutonCreer1.click(); 
     }
 
     @Then("^User Switch PopUpWindow$")
     public void user_switch_popupwindow() throws Throwable {
+        
         Driver.switchTo().defaultContent();
                     System.out.println(Driver.getTitle());
+                                 Thread.sleep(1000);
 
 WebElement frame=Driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/hrservlet/GetHRPage?TREE=TA0FR&LANG=F&NODE=TA0FR002_AU13100F&VOC=FRP&PAGE=ACTION&IDENT=1FC89A37-FA2D-4F65-B33E-22C021A99320']"));
 Driver.switchTo().frame(frame);
@@ -144,6 +145,7 @@ Driver.switchTo().frame(frame);
 
     @Then("^User Type Etablissement '(.+)'$")
     public void user_type_etablissement_(String etablissement) throws Throwable {
+          Thread.sleep(1000);
     WebElement Etabliss =  Driver.findElement(By.id("D*ZY3XIDESTA_0"));
                  Etabliss.sendKeys(etablissement);
     }
@@ -161,7 +163,7 @@ Driver.switchTo().frame(frame);
          Driver.switchTo().window(allWindows.get(0));
                 System.out.println(Driver.getTitle());
                 
-                Thread.sleep(30 * 1000);
+                Thread.sleep(1000);
                     Driver.switchTo().defaultContent();
                     Driver.switchTo().frame("technologyFrame");
                     
@@ -219,7 +221,7 @@ Driver.switchTo().frame(frame);
                     System.out.println(Driver.getTitle());
                      WebElement tab2 =  Driver.findElement(By.id("Tab2off"));
                     tab2.click();
-                Thread.sleep(30*1000);
+                Thread.sleep(1000);
        
     }
 
@@ -236,6 +238,7 @@ Driver.switchTo().frame(frame);
 
     @Then("^User Type CategoriEntree '(.+)'$")
     public void user_type_categorientree_(String categorientree) throws Throwable {
+            Thread.sleep(1000);
          WebElement CatE =  Driver.findElement(By.id("D*ZYESCGSTHI-0-0_0"));
                  CatE.sendKeys(categorientree);
     }
@@ -417,6 +420,8 @@ Driver.switchTo().frame(frame);
    public void user_switch_to_frametwo() throws Throwable {
           Thread.sleep(1000);
                      Driver.switchTo().defaultContent();
+                                                      Thread.sleep(1000);
+
                     WebElement frame2 =Driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/errorsDlg.html']"));
                         Driver.switchTo().frame(frame2);
                
