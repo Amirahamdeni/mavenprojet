@@ -5,7 +5,7 @@ Scenario: Successful Embauche
 Scenario Outline: Successful Embauche 
 
         Given User Is On HomePage
-	Then User Enters '<username>'and '<password>' 
+	When User Enters Name And Password 
         Then User Click On Menu 
         Then User Click On Dossier 
         Then User Click On Entree 
@@ -47,9 +47,9 @@ Scenario Outline: Successful Embauche
         Then User Type Rubrique '<rubrique>'                                           
         Then User Type MontantSalarial '<montantSalarial>'                                           
         Then User Type FreqPaie '<freqPaie>'                                             
-        Then User Switch To BannerFrametwo
         Then User Click On Soumettre
+        Then User Switch To Frametwo
 
    Examples: 
- | username | password | dateRecrutement| societe|etablissement|qualite|nom   |prenom  |sexe     |dateNaissance|categoriEntree|motifEntree|emploi |uniteOrganisationnelle|calPaie|codeCycleTravail|conventionCollective|qualification|typePaie|codeGrade|natureContrat|typeContrat|typeTempsContractuel|heurTrvailSemaine|pourcentageTempsPlein|rubrique|montantSalarial|freqPaie|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
- |  TYOUSFI |  HRA     |01/01/2018      |CGM     |CGM01        |M.     |BRUNO |Patrick |MASCULIN |01/01/1990   |STANDA        |REX        |16STAGI|CGM                   |01     |C10A            |9999                |STA          |3       |9999-STA |SC           |ST         |00                  |35               |100                  |ISM     |1500           |MT      |
+ | dateRecrutement| societe|etablissement|qualite|nom   |prenom  |sexe     |dateNaissance|categoriEntree|motifEntree|emploi |uniteOrganisationnelle|calPaie|codeCycleTravail|conventionCollective|qualification|typePaie|codeGrade|natureContrat|typeContrat|typeTempsContractuel|heurTrvailSemaine|pourcentageTempsPlein|rubrique|montantSalarial|freqPaie|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+ |01/01/2018      |CGM     |CGM01        |M.     |BRUNO |Patrick |MASCULIN |01/01/1990   |STANDA        |REX        |16STAGI|CGM                   |01     |C10A            |9999                |STA          |3       |9999-STA |SC           |ST         |00                  |35               |100                  |ISM     |1500           |MT      |

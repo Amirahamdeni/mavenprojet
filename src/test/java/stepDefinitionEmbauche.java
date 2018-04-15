@@ -31,7 +31,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class stepDefinitionEmbauche {
     	
-    public static WebDriver Driver;
+    public  WebDriver Driver;
     
     	
   
@@ -39,9 +39,9 @@ public class stepDefinitionEmbauche {
     public void user_Is_On_HomePage() throws Throwable {
         System.out.println("*******************");
 		System.out.println("launching IEEEEEEEEEEE browser");
-		
+		     System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                   Driver = new InternetExplorerDriver();
-        System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
+   
         
                 Driver.manage().window().maximize();
 		Driver.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
@@ -52,9 +52,11 @@ public class stepDefinitionEmbauche {
     
     
 
-     @Then("^User Enters '(.+)' and '(.+)'$")
-    public void user_enters_and_() throws Throwable {
-         Driver.manage().timeouts().pageLoadTimeout(100, SECONDS);
+    @When("^User Enters Name And Password$")
+    public void user_Enters_Name_And_Password() throws Throwable {
+       
+    
+         
          WebElement firstNameTextBox = Driver.findElement(By.id("loginid"));
                     firstNameTextBox.sendKeys("TYOUSFI");
                    
@@ -62,19 +64,17 @@ public class stepDefinitionEmbauche {
                     PasswordTextBox.sendKeys("HRA");
                     
                      WebElement Connex = Driver.findElement(By.className("hrportal-self-submit-center"));
-                     Connex.click();
-
-      
+                     Connex.click();   
          
     }
-
+    
 
 
     
     
     @Then("^User Click On Menu$")
     public void user_click_on_menu_() throws Throwable {
-         Driver.manage().timeouts().pageLoadTimeout(100, SECONDS);
+      
          WebElement Menu=  Driver.findElement(By.className("hrsp_root_label"));
                     Menu.click();  
                     Thread.sleep(4000);
@@ -88,7 +88,7 @@ public class stepDefinitionEmbauche {
     }
 
     @Then("^User Click On Entree$")
-    public void user_click_on_entree_(String entree) throws Throwable {
+    public void user_click_on_entree_() throws Throwable {
         WebElement Entree =  Driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[1]/ul/li[1]/div/div"));
                      Entree.click();
     }
@@ -100,9 +100,9 @@ public class stepDefinitionEmbauche {
       
     }
 
-    @Then("^User Switch To BannerFrame$")
-    public void user_Switch_To_BannerFrame_1() throws Throwable {
-      Thread.sleep(30 * 1000);
+    @Then("^User Switch To BannerFrameone$")
+    public void user_Switch_To_BannerFrameone() throws Throwable {
+      Thread.sleep(1000);
                     Driver.switchTo().defaultContent();
                     Driver.switchTo().frame("technologyFrame");
                     
@@ -412,7 +412,19 @@ Driver.switchTo().frame(frame);
                    WebElement Commit =  Driver.findElement(By.id("A*COMMIT_2"));
                 Commit.click();
     }
+    
+@Then("^User Switch To Frametwo$")
+   public void user_switch_to_frametwo() throws Throwable {
+          Thread.sleep(1000);
+                     Driver.switchTo().defaultContent();
+                    WebElement frame2 =Driver.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/errorsDlg.html']"));
+                        Driver.switchTo().frame(frame2);
+               
+               //  WebElement Yesbutton =driver.findElement(By.id("yes_button"));
+                  //      Yesbutton.click();
 
    
+   
+   }
 
 }

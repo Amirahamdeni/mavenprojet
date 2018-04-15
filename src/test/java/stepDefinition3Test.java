@@ -71,12 +71,12 @@ public class stepDefinition3Test {
                     Embauche.click();
                 //FIN NAVIGATION    
                 //RENSEIGNEMENT INDIV
-//                    Thread.sleep(4000);
+                   Thread.sleep(1000);
                     driver.switchTo().defaultContent();
                     driver.switchTo().frame("technologyFrame");
                     
                     driver.switchTo().frame("OpFrmsFrame");                                        
-                 
+                   Thread.sleep(1000);
                     driver.switchTo().frame("AppFrmsFrame");
                     driver.switchTo().frame("BannerFrame");
 

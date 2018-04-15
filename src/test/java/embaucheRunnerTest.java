@@ -16,7 +16,7 @@ import cucumber.api.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/"
-        ,glue = {"stepDefinitionEmbauche"}
+       
         ,plugin = {"pretty", "json:target/cucumber.json"}     
         ,tags = {"@EmbaucheHrSpace"}
               
