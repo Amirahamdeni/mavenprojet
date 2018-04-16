@@ -11,7 +11,7 @@
             </goals>
             <properties>
                 <test>${packageClassName}</test>
-                <browser>chrome</browser>
+                
                 <webdriver.ie.drive>D:\IEDriverServer.exe</webdriver.ie.drive>
             </properties>
         </action>

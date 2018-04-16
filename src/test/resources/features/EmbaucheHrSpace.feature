@@ -5,8 +5,8 @@ Scenario: Successful Embauche
 Scenario Outline: Successful Embauche 
 
         Given User Is On HomePage
-	When User Enters Name And Password 
-        Then User Click On Menu 
+	When User Enters Name And Password
+        Then User Click On Menu
         Then User Click On Dossier 
         Then User Click On Entree 
         Then User Click On Embaucher

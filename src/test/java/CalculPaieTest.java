@@ -27,8 +27,7 @@ public class CalculPaieTest {
 	
 	@BeforeClass
 	public static void setUp() {
-		System.out.println("*******************");
-		System.out.println("launching IEEEEEEEEEEE browser");
+		
 		 System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                  
     driver = new InternetExplorerDriver();
@@ -67,14 +66,11 @@ public class CalculPaieTest {
                       Thread.sleep(1000);
                       WebElement Paie = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/div/div"));
                       Paie.click();
-                     
+                                           Thread.sleep(1000);
+
                       WebElement SoumCycle = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[3]/div/div"));
                       SoumCycle.click();
-                      
-                      
-                      
-                      
-                      
+                     
                        WebElement CalculPaie= driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/ul/li[3]/ul/li[1]/div/div[1]"));
                       CalculPaie.click();
                       //
@@ -230,7 +226,7 @@ public class CalculPaieTest {
                    WebElement Commit3 =  driver.findElement(By.id("A*COMMIT_1"));
                  Commit3.click();
                          //retour vers calcul de paie
-                                          driver.switchTo().defaultContent();
+                         driver.switchTo().defaultContent();
 
                           WebElement Menu3=  driver.findElement(By.className("hrsp_root_label"));
                     Menu3.click();
@@ -267,6 +263,7 @@ catch (NoAlertPresentException e) {
                     
                       WebElement ExeDemandeP= driver.findElement(By.xpath("//*[@id=\"Z*SubBtn\"]"));
                      ExeDemandeP.click();
+                      Thread.sleep(1000);
                      driver.switchTo().alert().accept();
                       WebElement Resultat= driver.findElement(By.xpath("//*[@id=\"Z*Results\"]"));
                      Resultat.click();
