@@ -37,10 +37,11 @@ public class stepDefinitionEmbauche {
        
 		     System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                   Driver1 = new InternetExplorerDriver();
-   
-        
                 Driver1.manage().window().maximize();
-		Driver1.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
+             String URL = System.getProperty("ENVIRONNEMENTCLIENT");
+
+                
+		Driver1.navigate().to(URL);
               Driver1.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
                  Driver1.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
 		String strPageTitle = Driver1.getTitle();
@@ -174,7 +175,7 @@ Driver1.switchTo().frame(frame);
                     Driver1.switchTo().frame("MainFrame");
                     Driver1.switchTo().frame("body");
                     System.out.println(Driver1.getTitle());
-                Thread.sleep(30 * 1000);
+                Thread.sleep(4000);
     }
 
     @Then("^User Type Qualite '(.+)'$")
@@ -205,7 +206,7 @@ Driver1.switchTo().frame(frame);
     public void user_type_datenaissance_(String datenaissance) throws Throwable {
   WebElement DateN =  Driver1.findElement(By.id("D*ZY10DATNAI-0-0_0"));
                  DateN.sendKeys(datenaissance);
-                 Thread.sleep(30 * 1000);
+                 Thread.sleep(4000);
     }
 
     @Then("^User Switch Tab Affectation$")
@@ -270,7 +271,7 @@ Driver1.switchTo().frame(frame);
     public void user_type_code_(String codecycletravail) throws Throwable {
          WebElement Code =  Driver1.findElement(By.id("D*ZY5GCODE-0-0_0"));
                  Code.sendKeys(codecycletravail);
-                  Thread.sleep(30 * 1000);
+                  Thread.sleep(4000);
     }
 
     @Then("^User Switch Tab Carriere$")
@@ -286,7 +287,7 @@ Driver1.switchTo().frame(frame);
                      System.out.println(Driver1.getTitle());
                      WebElement tab3 =  Driver1.findElement(By.id("Tab3off"));
                     tab3.click();
-                    Thread.sleep(30*1000);
+                    Thread.sleep(4000);
 
     }
 
@@ -369,7 +370,7 @@ Driver1.switchTo().frame(frame);
                       System.out.println(Driver1.getTitle());
                      WebElement tab6 =  Driver1.findElement(By.id("Tab6off"));
                     tab6.click();
-                     Thread.sleep(30*1000);
+                     Thread.sleep(4000);
     }
 
     @Then("^User Switch To Body of Tab SalaireEtPaiement$")
@@ -404,7 +405,7 @@ Driver1.switchTo().frame(frame);
 
     @Then("^User Click On Soumettre$")
     public void user_click_on_soumettre_() throws Throwable {
-        Thread.sleep(30 * 1000);
+        Thread.sleep(4000);
                     Driver1.switchTo().defaultContent();
                     Driver1.switchTo().frame("technologyFrame");
                     

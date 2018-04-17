@@ -8,6 +8,7 @@
     <ciManagement>
         <system>hudson</system>
         <url>http://localhost:8080/job/mavenproject5/</url>
+
     </ciManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
