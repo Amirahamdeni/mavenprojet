@@ -73,6 +73,7 @@ public class stepDefinition3Test {
                 //RENSEIGNEMENT INDIV
                    Thread.sleep(1000);
                     driver.switchTo().defaultContent();
+                    Thread.sleep(1000);
                     driver.switchTo().frame("technologyFrame");
                     
                     driver.switchTo().frame("OpFrmsFrame");                                        

@@ -37,11 +37,10 @@ public class stepDefinitionEmbauche {
        
 		     System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                   Driver1 = new InternetExplorerDriver();
+   
+        
                 Driver1.manage().window().maximize();
-             String URL = System.getProperty("ENVIRONNEMENTCLIENT");
-
-                
-		Driver1.navigate().to(URL);
+		Driver1.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
               Driver1.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
                  Driver1.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
 		String strPageTitle = Driver1.getTitle();
