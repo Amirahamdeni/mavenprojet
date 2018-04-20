@@ -425,8 +425,8 @@ Driver1.switchTo().frame(frame);
                     WebElement frame2 =Driver1.findElement(By.xpath("//iframe[@src='https://ppr-hiris.soprahronline.com/hr-rich-client/errorsDlg.html']"));
                         Driver1.switchTo().frame(frame2);
                
-               //  WebElement Yesbutton =driver.findElement(By.id("yes_button"));
-                  //      Yesbutton.click();
+                 WebElement Yesbutton =Driver1.findElement(By.id("yes_button"));
+                       Yesbutton.click();
 
    
    
