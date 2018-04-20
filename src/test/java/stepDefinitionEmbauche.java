@@ -37,12 +37,12 @@ public class stepDefinitionEmbauche {
        
 		     System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe ");
                   Driver1 = new InternetExplorerDriver();
-   
+    Driver1.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+                 Driver1.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
         
                 Driver1.manage().window().maximize();
 		Driver1.navigate().to("https://ppr-hiris.soprahronline.com/hra-space/portal");
-              Driver1.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-                 Driver1.manage().timeouts().setScriptTimeout(100,TimeUnit.SECONDS);
+             
 		String strPageTitle = Driver1.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
     }
@@ -68,10 +68,10 @@ public class stepDefinitionEmbauche {
 
 
     
-    
+       
     @Then("^User Click On Menu$")
     public void user_click_on_menu_() throws Throwable {
-      
+         Thread.sleep(1000);
          WebElement Menu=  Driver1.findElement(By.className("hrsp_root_label"));
                     Menu.click();  
                     Thread.sleep(1000);
@@ -238,7 +238,7 @@ Driver1.switchTo().frame(frame);
 
     @Then("^User Type CategoriEntree '(.+)'$")
     public void user_type_categorientree_(String categorientree) throws Throwable {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
          WebElement CatE =  Driver1.findElement(By.id("D*ZYESCGSTHI-0-0_0"));
                  CatE.sendKeys(categorientree);
     }

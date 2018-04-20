@@ -50,7 +50,8 @@ public class stepDefinitionPaie {
     public void user_Enters_Name_And_Password() throws Throwable {
        
     
-         
+                       Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
          WebElement firstNameTextBox = Driver2.findElement(By.id("loginid"));
                     firstNameTextBox.sendKeys("TYOUSFI");
                    
@@ -68,7 +69,8 @@ public class stepDefinitionPaie {
     public void user_navigate_to_click_on_calculpaie_() throws Throwable {
         
                  
-                    
+                                  Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
                       Thread.sleep(1000);
                       WebElement Paie = Driver2.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[10]/div/div"));
                       Paie.click();
@@ -81,6 +83,8 @@ public class stepDefinitionPaie {
     }
     @Then("^User Switch To BannerFrame$")
     public void user_switch_to_bannerframe() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
      Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -91,16 +95,22 @@ public class stepDefinitionPaie {
     }
     @Then("^User Type Demande$")
     public void user_type_demande_() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
          WebElement Demande= Driver2.findElement(By.id("PROMPT-1-1"));
                       Demande.sendKeys("%AMIRA%");
     }
     @Then("^User Click On Recherche$")
     public void user_click_on_recherche() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
         WebElement Recherche= Driver2.findElement(By.xpath("//*[@id=\"HRDSEL_1\"]/table/tbody/tr/td/table/tbody/tr[4]/td[6]/input"));
                       Recherche.click();
     }
     @Then("^User Switch ListView$")
     public void user_switch_listview() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
        Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -115,11 +125,15 @@ public class stepDefinitionPaie {
     }
     @Then("^User Click On PaieChoisie$")
     public void user_click_on_paiechoisie() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
         WebElement PaieChoisie= Driver2.findElement(By.id("ZO00LISOUM"));
                       PaieChoisie.click();
     }
     @Then("^User Switch To Bodyone$")
     public void user_switch_to_bodyone() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
          Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -132,11 +146,15 @@ public class stepDefinitionPaie {
     }
      @Then("^User Type Travail$")
     public void user_type_travail_() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
     WebElement Travail = Driver2.findElement(By.id("D*ZO00IDFJOB-0-0_0"));
                     Travail.sendKeys("11");
     }
     @Then("^User Switch Tab Editions$")
     public void user_switch_tab_editions() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
       Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -151,6 +169,8 @@ public class stepDefinitionPaie {
     }
      @Then("^User Switch To Bodytwo$")
     public void user_switch_to_bodytwo() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
          Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -164,6 +184,8 @@ public class stepDefinitionPaie {
     }
     @Then("^User Switch To Tab Preselection$")
     public void user_switch_to_tab_preselection() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
        Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -177,6 +199,8 @@ public class stepDefinitionPaie {
     }
      @Then("^User Switch To Bodythree$")
     public void user_switch_to_body3() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
            Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -190,12 +214,16 @@ public class stepDefinitionPaie {
     }
      @Then("^User Enters Sql Code$")
     public void user_enters_sql_code() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
          WebElement Sql = Driver2.findElement(By.id("D*ZO5WZOREQU-0-0_0"));
                     Sql.clear();
                     Sql.sendKeys("select nudoss from zy00 where matcle in('M0000009')");
     }
     @Then("^User Switch To BannerFrameoneP$")
     public void user_switch_to_bannerframeone() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
        Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -206,11 +234,15 @@ public class stepDefinitionPaie {
     }
      @Then("^User Click On SoumettreP$")
     public void user_click_on_soumettre() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
          WebElement Commit =  Driver2.findElement(By.id("A*COMMIT_2"));
                  Commit.click();
     }
      @Then("^User Navigate To Cick On Bulletin$")
     public void user_navigate_to_cick_on_bulletin() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
       Driver2.switchTo().defaultContent();
                   WebElement Menu2=  Driver2.findElement(By.className("hrsp_root_label"));
                     Menu2.click();
@@ -226,6 +258,8 @@ public class stepDefinitionPaie {
     }
     @Then("^User Switch To BannerFrametwo$")
     public void user_switch_to_bannerframetwo() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
         Thread.sleep(2000);
                     Driver2.switchTo().defaultContent().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
                     Driver2.switchTo().frame("technologyFrame");
@@ -237,17 +271,23 @@ public class stepDefinitionPaie {
     }
      @Then("^User Type Matricule$")
     public void user_type_matricule_() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
         WebElement Matricule= Driver2.findElement(By.id("PROMPT-1-1"));
                       Matricule.sendKeys("M0000009");
     }
      @Then("^User Click On Recherchetwo$")
     public void user_click_on_recherche2() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
           WebElement Recherche2= Driver2.findElement(By.xpath("//*[@id=\"HRDSEL_1\"]/table/tbody/tr/td/table/tbody/tr[4]/td[14]/input"));
                       Recherche2.click(); 
     }
     
     @Then("^User Switch To Bodyfour$")
     public void user_switch_to_body4() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
           Driver2.switchTo().defaultContent();
                     Driver2.switchTo().frame("technologyFrame");
                     
@@ -262,12 +302,16 @@ public class stepDefinitionPaie {
     
      @Then("^User Change Etat Temoin$")
     public void user_change_etat_temoin() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
          WebElement dropdown = Driver2.findElement(By.xpath("//*[@id=\"D*ZX5VVALIDT-0-0_0\"]/option[3]"));
                     dropdown.click();
                       
     }
     @Then("^User Switch To BannerFramethree$")
     public void user_switch_to_bannerframethree() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
         WebElement dropdown = Driver2.findElement(By.xpath("//*[@id=\"D*ZX5VVALIDT-0-0_0\"]/option[3]"));
                     dropdown.click();
                        Driver2.switchTo().defaultContent();
@@ -280,11 +324,15 @@ public class stepDefinitionPaie {
     }
     @Then("^User Click On Soumettretwo$")
     public void user_click_on_soumettretwo() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
        WebElement Commit3 =  Driver2.findElement(By.id("A*COMMIT_1"));
                  Commit3.click();
     }
     @Then("^User Confirm Paie$")
     public void user_confirm_paie() throws Throwable {
+                      Driver2.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
         Driver2.switchTo().defaultContent();
 
                          WebElement Menu3=  Driver2.findElement(By.className("hrsp_root_label"));

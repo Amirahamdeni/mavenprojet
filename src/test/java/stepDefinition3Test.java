@@ -63,7 +63,7 @@ public class stepDefinition3Test {
                     WebElement Dossier = driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[1]/div/div"));
                       Dossier.click();
                     
-
+                                
                      WebElement Entree =  driver.findElement(By.xpath("//*[@id=\"hrsp_menu\"]/li/ul/li[1]/ul/li[1]/div/div"));
                      Entree.click();
 
@@ -154,7 +154,7 @@ public class stepDefinition3Test {
               driver.switchTo().frame("MainFrame");
                  driver.switchTo().frame("body");
                  
-                                 Thread.sleep(1000);
+                                 Thread.sleep(2000);
 
                  WebElement CatE =  driver.findElement(By.id("D*ZYESCGSTHI-0-0_0"));
                  CatE.sendKeys("STANDA");
