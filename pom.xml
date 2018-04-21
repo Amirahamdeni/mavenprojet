@@ -18,6 +18,13 @@
             <artifactId>maven-resources-plugin</artifactId>
             <version>2.5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-clean-plugin</artifactId>
+    <version>2.4.1</version>
+</dependency>
+
         <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java8 -->
         <dependency>
             <groupId>info.cukes</groupId>
@@ -98,4 +105,5 @@
         <system>hudson</system>
         <url>http://localhost:8080/job/automatisationTNRSopra/</url>
     </ciManagement>
+    
 </project>
